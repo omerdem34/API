@@ -18,10 +18,14 @@ public class GetRequest04 {
     public void test(){
         String url="https://restful-booker.herokuapp.com/booking/5 ";
         Response response=given().
+
                 accept("application/json").
+
                 when().
+
                 get(url);
         response.prettyPrint();
+
         response.then().assertThat().statusCode(200).
                 contentType("application/json").
                 body("firstname", equalTo("Mary"),
